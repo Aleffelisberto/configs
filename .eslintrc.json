@@ -1,0 +1,24 @@
+{
+    "env": {
+        "es2021": true,
+        "node": true,
+        "jest": true
+    },
+    "extends": [
+        "airbnb-base"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": [
+        "@typescript-eslint"
+    ],
+    "rules": {
+        "linebreak-style": 0,
+        "indent": ["error", 4, {"switch:command": 1}],
+        "max-len": ["error", {"code": 120}],
+        "no-underscore-dangle": "warn"
+    }
+}

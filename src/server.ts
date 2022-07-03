@@ -1,11 +1,17 @@
-import express from 'express'
+import express from 'express';
+import dotenv from 'dotenv'
 
-const app = express()
+dotenv.config();
 
-app.get('/', (request, response) => {
-  return response.json({ message: 'Hello World!' })
-})
+const app = express();
+
+app.get('/', (request, response) => response.json({ message: 'Hello World!' }));
+
+app.get('/:name', (request, response) => {
+    const { name } = request.params;
+    response.json({ message: `Your name is ${name}` });
+});
 
 app.listen('3333', () => {
-  console.log('Server is running!')
-})
+    console.log(process.env.PROJECT_NAME + ' is running!');
+});
